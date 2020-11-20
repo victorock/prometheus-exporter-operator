@@ -1,3 +1,4 @@
+---
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
@@ -13,3 +14,14 @@ spec:
           severity: critical
         annotations:
           message: "Prometheus Exporter Job {{ $labels.job }} is DOWN, maybe connection to monitored host is lost"
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: "prometheus-exporter-{{ type }}"
+spec:
+  groups:
+  - name: "prometheus-exporter-{{ type }}.rules"
+{%  filter indent(4, True) %}
+{%  include "{{ type }}/prometheus.json.j2" %}
+{%  endfilter %}

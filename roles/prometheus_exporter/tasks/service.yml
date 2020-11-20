@@ -1,0 +1,5 @@
+# Manage Service
+---
+- name: Manage Service for PrometheusExporter {{ meta.name }} on Namespace {{ meta.namespace }}
+  k8s:
+    definition: "{{ lookup('template', 'service.yml.j2') }}"

@@ -1,0 +1,3 @@
+# Global Vars manipulations
+---
+- include_vars: "{{ type }}.yml"

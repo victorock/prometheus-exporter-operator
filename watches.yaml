@@ -2,4 +2,4 @@
 - version: v1alpha1
   group: monitoring.3scale.net
   kind: PrometheusExporter
-  role: prometheusexporter
+  role: prometheus_exporter

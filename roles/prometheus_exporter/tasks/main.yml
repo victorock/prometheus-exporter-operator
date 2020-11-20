@@ -1,0 +1,7 @@
+# Main
+---
+- include_tasks: "vars.yml"
+- include_tasks: "deployment.yml"
+- include_tasks: "service.yml"
+- include_tasks: "service_monitor.yml"
+- include_tasks: "grafana_dashboard.yml"

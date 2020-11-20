@@ -91,10 +91,10 @@ manifests-push: ## OPERATOR OLM CSV - Push CSV manifests to remote application r
 
 ## Prometheus rules ##
 prometheus-rules-deploy: namespace-create ## PROMETHEUS RULES - Create Prometheus Rules (Memcached, Redis, MySQL, PostgreSQL, Sphinx, Elasticsearch, Cloudwatch, Probe)
-	$(KUBE_CLIENT) apply -f prometheus-rules/ -n $(NAMESPACE)
+	$(KUBE_CLIENT) apply -f roles/prometheus_exporter/files/prometheus_rules/ -n $(NAMESPACE)
 
 prometheus-rules-delete: ## PROMETHEUS RULES - Delete Prometheus Rules (Memcached, Redis, MySQL, PostgreSQL, Sphinx, Elasticsearch, Cloudwatch, Probe)
-	$(KUBE_CLIENT) delete -f prometheus-rules/ -n $(NAMESPACE) || true
+	$(KUBE_CLIENT) delete -f roles/prometheus_exporter/files/prometheus_rules/ -n $(NAMESPACE) || true
 
 help: ## Print this help
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-33s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
