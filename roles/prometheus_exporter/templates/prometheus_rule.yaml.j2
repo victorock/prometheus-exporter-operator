@@ -22,6 +22,8 @@ metadata:
 spec:
   groups:
   - name: "prometheus-exporter-{{ type }}.rules"
+{## <prometheus_rules> ##}
 {%  filter indent(4, True) %}
 {%  include "{{ role_path }}/exporters/{{ type }}/prometheus.json.j2" %}
 {%  endfilter %}
+{## <prometheus_rules> ##}

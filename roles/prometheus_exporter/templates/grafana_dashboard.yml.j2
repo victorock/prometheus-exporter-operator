@@ -9,6 +9,8 @@ metadata:
     "{{ grafana_dashboard.label.key | default(grafana_dashboard_label_key) }}": "{{ grafana_dashboard.label.value | default(grafana_dashboard_label_value) }}"
 spec:
   name: "{{ meta.namespace }}-prometheus-exporter-{{ type }}.json"
+{## <grafana_dashboard> ##}
 {%  filter indent(4, True) %}
 {%  include "{{ role_path }}/exporters/{{ type }}/grafana.yml.j2" %}
 {%  endfilter %}
+{## <grafana_dashboard> ##}
