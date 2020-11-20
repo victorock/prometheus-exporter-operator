@@ -20,3 +20,4 @@
 
     - name: "prometheus_exporter: init post roles"
       include_tasks: "{{ role_path }}/includes/post_roles.yml"
+  when: type in supported_types
