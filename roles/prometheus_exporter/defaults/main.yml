@@ -1,4 +1,9 @@
 ---
+# Prometheus Exporter
+prometheus_exporter_pre_tasks: []
+prometheus_exporter_pre_roles: []
+prometheus_exporter_post_tasks: []
+prometheus_exporter_post_roles: []
 
 ## Main
 type: "none" # memcached, redis, mysql, postgresql, sphinx, es, cloudwatch

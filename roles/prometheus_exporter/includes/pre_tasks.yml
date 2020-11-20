@@ -1,1 +1,7 @@
 ---
+- name: "pre_tasks"
+  include_tasks: "{{ item }}"
+  with_first_found:
+    - errors: "ignore"
+      skip: "true"
+      files: "{{ prometheus_exporter_pre_tasks }}"
