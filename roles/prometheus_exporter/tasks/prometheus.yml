@@ -1,0 +1,5 @@
+---
+# Manage PrometheusRule
+- name: "Manage PrometheusRule for PrometheusExporter {{ meta.name }} on Namespace {{ meta.namespace }}"
+  k8s:
+    definition: "{{ lookup('template', 'prometheus_rule.yml.j2') }}"
