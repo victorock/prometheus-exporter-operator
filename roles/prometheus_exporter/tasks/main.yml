@@ -1,8 +1,22 @@
 ---
 # Main
-- include_tasks: "vars.yml"
-- include_tasks: "deployment.yml"
-- include_tasks: "service.yml"
-- include_tasks: "service_monitor.yml"
-- include_tasks: "grafana_dashboard.yml"
-- include_tasks: "prometheus_rule.yml"
+- name: "prometheus_exporter: main"
+  block:
+    - name: "prometheus_exporter: init vars"
+      include_tasks: "{{ role_path }}/includes/vars.yml"
+
+    - name: "prometheus_exporter: init pre_tasks"
+      include_tasks: "{{ role_path }}/includes/pre_tasks.yml"
+
+    - name: "prometheus_exporter: init pre_roles"
+      include_tasks: "{{ role_path }}/includes/pre_roles.yml"
+
+    - name: "prometheus_exporter: init tasks"
+      include_tasks: "{{ role_path }}/includes/tasks.yml"
+
+  always:
+    - name: "prometheus_exporter: init post tasks"
+      include_tasks: "{{ role_path }}/includes/post_tasks.yml"
+
+    - name: "prometheus_exporter: init post roles"
+      include_tasks: "{{ role_path }}/includes/post_roles.yml"

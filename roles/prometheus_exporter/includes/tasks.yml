@@ -1,0 +1,6 @@
+---
+- include_tasks: "tasks/deployment.yml"
+- include_tasks: "tasks/service.yml"
+- include_tasks: "tasks/service_monitor.yml"
+- include_tasks: "tasks/grafana_dashboard.yml"
+- include_tasks: "tasks/prometheus_rule.yml"
