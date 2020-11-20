@@ -1,5 +1,4 @@
 ---
-
 # Exporter
 image_name: "prom/cloudwatch-exporter"
 image_version: "cloudwatch_exporter-0.8.0"

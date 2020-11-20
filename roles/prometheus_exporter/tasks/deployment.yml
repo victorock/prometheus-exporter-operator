@@ -1,5 +1,5 @@
-# Manage Deployment
 ---
+# Manage Deployment
 - name: Manage Deployment for PrometheusExporter {{ meta.name }} on Namespace {{ meta.namespace }}
   k8s:
     definition: "{{ lookup('template', 'deployment.yml.j2') }}"

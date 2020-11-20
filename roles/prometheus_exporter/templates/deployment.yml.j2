@@ -27,7 +27,7 @@ spec:
     spec:
 {##   <volumes> ##}
 {%    filter ident(6, True) %}
-{%    include "{{ type }}/volumes.yml.j2" ignore missing %}
+{%    include "{{ role_path }}/exporters/{{ type }}/volumes.yml.j2" ignore missing %}
 {%    endfilter %}
 {##   <volumes> ##}
       containers:
@@ -61,6 +61,6 @@ spec:
                 memory: "{{ resources.requests.memory | default(resources_requests_memory) }}"
 {##       <container_parameter> ##}
 {%        filter ident(10, True) %}
-{%        include "{{ type }}/container.yml.j2" ignore missing %}
+{%        include "{{ role_path }}/exporters/{{ type }}/container.yml.j2" ignore missing %}
 {%        endfilter %}
 {##       <container_parameter> ##}

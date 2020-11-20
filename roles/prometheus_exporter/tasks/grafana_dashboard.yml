@@ -1,5 +1,5 @@
-# Manage GrafanaDashboard
 ---
+# Manage GrafanaDashboard
 - name: Convert grafanaDashboard.enabled boolean var into ansible grafana_dashboard_state state var for PrometheusExporter {{ meta.name }} on Namespace {{ meta.namespace }}
   set_fact:
     grafana_dashboard_state: "absent"

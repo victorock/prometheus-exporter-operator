@@ -23,5 +23,5 @@ spec:
   groups:
   - name: "prometheus-exporter-{{ type }}.rules"
 {%  filter indent(4, True) %}
-{%  include "{{ type }}/prometheus.json.j2" %}
+{%  include "{{ role_path }}/exporters/{{ type }}/prometheus.json.j2" %}
 {%  endfilter %}
