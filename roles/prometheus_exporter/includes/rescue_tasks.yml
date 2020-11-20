@@ -1,0 +1,7 @@
+---
+- name: "rescue_tasks"
+  include_tasks: "{{ item }}"
+  with_first_found:
+    - errors: "ignore"
+      skip: "true"
+      files: "{{ prometheus_exporter_rescue_tasks }}"

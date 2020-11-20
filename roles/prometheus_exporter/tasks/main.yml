@@ -14,6 +14,13 @@
     - name: "prometheus_exporter: init tasks"
       include_tasks: "{{ role_path }}/includes/tasks.yml"
 
+  rescue:
+    - name: "prometheus_exporter: init rescue tasks"
+      include_tasks: "{{ role_path }}/includes/rescue_tasks.yml"
+
+    - name: "prometheus_exporter: init rescue roles"
+      include_tasks: "{{ role_path }}/includes/rescue_roles.yml"
+
   always:
     - name: "prometheus_exporter: init post tasks"
       include_tasks: "{{ role_path }}/includes/post_tasks.yml"
